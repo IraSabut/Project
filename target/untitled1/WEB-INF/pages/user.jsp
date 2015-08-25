@@ -45,6 +45,9 @@
   <a href="<c:url value="/contract" /> ">
     <label>Contract :</label>
   </a>
+  <a href="<c:url value="/author" /> ">
+    <label>Authors :</label>
+  </a>
   <div class="form-group">
     <label> </label>
   </div>

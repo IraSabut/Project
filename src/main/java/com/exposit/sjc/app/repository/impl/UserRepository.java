@@ -9,9 +9,7 @@ import org.hibernate.Criteria;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 import com.exposit.sjc.app.repository.dao.UserDao;
-/**
- * Created by Админ on 21.08.2015.
- */
+
 @Repository
 public class UserRepository  extends AbstractHibernateDao<UserEntity, Long> implements UserDao {
     @Override

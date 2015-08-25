@@ -1,10 +1,12 @@
 package com.exposit.sjc.app.bookstore;
 
+import com.exposit.sjc.app.repository.entity.AuthorEntity;
 import com.exposit.sjc.app.repository.entity.BookEntity;
 import com.exposit.sjc.app.repository.entity.ContractEntity;
 import com.exposit.sjc.app.repository.entity.UserEntity;
 import com.exposit.sjc.app.repository.hibernate.AbstractHibernateDao;
 import com.exposit.sjc.domain.model.User;
+import com.exposit.sjc.domain.service.AuthorService;
 import com.exposit.sjc.domain.service.BookService;
 import com.exposit.sjc.domain.service.ContractService;
 import com.exposit.sjc.domain.service.UserService;
@@ -28,11 +30,13 @@ public class HelloController {
     private BookService bookService;
     private UserService userService;
     private ContractService contractService;
+    private AuthorService authorService;
 @Autowired
-    public HelloController(UserService userService,BookService bookService,ContractService contractService) {
+    public HelloController(UserService userService,BookService bookService,ContractService contractService,AuthorService authorService) {
   this.userService=userService;
     this.bookService=bookService;
 this.contractService=contractService;
+    this.authorService=authorService;
     }
 
 
@@ -56,6 +60,16 @@ this.contractService=contractService;
 
         return "user";
     }
+
+    @RequestMapping(value = "/author",method = RequestMethod.GET)
+    public String getAuthors(Model model) {
+        List<AuthorEntity> authors = this.authorService.getAuthors();
+
+        model.addAttribute("authors", authors);
+
+        return "author";
+    }
+
 
 
     @RequestMapping(value = "contract",method = RequestMethod.GET)

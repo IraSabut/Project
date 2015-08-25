@@ -3,15 +3,11 @@ package com.exposit.sjc.app.repository.dao;
 import java.sql.SQLException;
 import java.util.List;
 
-import com.exposit.sjc.domain.model.Author;
+import com.exposit.sjc.app.repository.base.GenericDao;
+import com.exposit.sjc.app.repository.entity.AuthorEntity;
 
-public interface AuthorDao {
-	public void addAuthor(Author author) throws SQLException;
 
-	public void updateAuthor(Author author) throws SQLException;
+public interface AuthorDao extends GenericDao<AuthorEntity, Long> {
 
-	public Author getAuthor(int id) throws SQLException;
-
-	public List<Author> getAuthors() throws SQLException;
 
 }

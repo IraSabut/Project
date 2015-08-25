@@ -4,12 +4,9 @@ package com.exposit.sjc.domain.model;
 import javax.persistence.*;
 import com.exposit.sjc.domain.model.User;
 
-@Entity
-@Table(name = "author")
+
 public class Author {
-    @Id
-    @Column(name = "idAuthor")
-    @GeneratedValue(strategy = GenerationType.AUTO)
+
     private Long authorId;
 
     public Long getAuthorId() {
@@ -20,7 +17,7 @@ public class Author {
         this.authorId = authorId;
     }
 
-    @JoinColumn(name = "idUser", referencedColumnName = "idUser")
+
     private User idUser;
 
     public User getIdUser() {

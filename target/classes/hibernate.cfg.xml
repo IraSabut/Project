@@ -7,7 +7,7 @@
         <mapping class = "com.exposit.sjc.app.repository.entity.UserEntity"/>
         <mapping class = "com.exposit.sjc.app.repository.entity.BookEntity"/>
         <mapping class = "com.exposit.sjc.app.repository.entity.ContractEntity"/>
-        <mapping class = "com.exposit.sjc.app.repository.entity.AutorEntity"/>
+        <mapping class = "com.exposit.sjc.app.repository.entity.AuthorEntity"/>
         <mapping class = "com.exposit.sjc.app.repository.entity.AutorizationDataEntity"/>
         <mapping class = "com.exposit.sjc.app.repository.entity.RoleEntity"/>
     </session-factory>

@@ -1,16 +1,29 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Админ
-  Date: 25.08.2015
-  Time: 14:48
-  To change this template use File | Settings | File Templates.
---%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title></title>
+    <title>Autors</title>
 </head>
 <body>
+<h1>List authors</h1>
+<c:if test = "${!empty authors}">
+  <table>
+    <tr>
+      <th>idAuthor</th>
+      <th>idUser</th>
 
+
+    </tr>
+    <c:forEach items = "${authors}" var = "author">
+      <tr>
+        <td>${author.idAuthor}</td>
+        <td>${author.idUser}<td>
+
+      </tr>
+    </c:forEach>
+  </table>
+</c:if>
 </body>
 </html>
