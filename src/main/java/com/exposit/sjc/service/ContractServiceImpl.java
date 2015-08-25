@@ -14,7 +14,7 @@ import java.util.List;
 @Transactional
 public class ContractServiceImpl implements ContractService {
 
-    @Autowired(required = false)
+    @Autowired
    private ContractDao contractRepository;
 
     @Override

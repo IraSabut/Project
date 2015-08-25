@@ -11,8 +11,8 @@
 <c:if test = "${!empty authors}">
   <table>
     <tr>
-      <th>Name</th>
-      <th>First Name</th>
+      <th>idAuthor</th>
+      <th>idUser</th>
 
 
     </tr>

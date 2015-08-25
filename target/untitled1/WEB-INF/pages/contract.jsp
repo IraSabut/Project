@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Админ
@@ -11,31 +12,36 @@
     <title></title>
 </head>
 <body>
-<h1>List users</h1>
-<c:if test = "${!empty users}">
+<h1>List contracts</h1>
+<c:if test = "${!empty contracts}">
   <table>
     <tr>
-      <th>Name</th>
-      <th>First Name</th>
-      <th>               patronymic</th>
-      <th> amountOfMoney</th>
-      <th> email</th>
-      <th> address</th>
-      <th>phoneNumber</th>
+      <th>idContract</th>
+      <th>dateOfPublication</th>
+      <th>fullPaymentToTheAuthor</th>
+      <th> idBook</th>
+      <th> isSigned</th>
+      <th> numberOfBooks</th>
+      <th>productionCost</th>
+      <th>valuePayments</th>
 
     </tr>
-    <c:forEach items = "${users}" var = "user">
+    <c:forEach items = "${contracts}" var = "contract">
       <tr>
-        <td>${user.firstName}</td>
-        <td>${user.lastName}<td>
-        <td>${user.patronymic}</td>
-        <td>${user.amountOfMoney}<td>
-        <td>${user.email}<td>
-        <td>${user.address}</td>
-        <td>${user.phoneNumber}<td>
+        <td>${contract.idContract}</td>
+        <td>${contract.dateOfPublication}<td>
+        <td>${contract.fullPaymentToTheAuthor}</td>
+        <td>${contract.idBook}<td>
+        <td>${contract.isSigned}<td>
+        <td>${contract.numberOfBooks}</td>
+        <td>${contract.productionCost}<td>
+        <td>${contract.valuePayments}<td>
       </tr>
     </c:forEach>
   </table>
 </c:if>
+<a href="<c:url value="/hello" />
+  <label>Login:</label>
+</a>
 </body>
 </html>

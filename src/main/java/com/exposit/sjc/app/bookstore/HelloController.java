@@ -72,7 +72,7 @@ this.contractService=contractService;
 
 
 
-    @RequestMapping(value = "contract",method = RequestMethod.GET)
+    @RequestMapping(value = "/contract",method = RequestMethod.GET)
     public String getContracts(Model model) {
         List<ContractEntity> contracts = this.contractService.getContracts();
 
