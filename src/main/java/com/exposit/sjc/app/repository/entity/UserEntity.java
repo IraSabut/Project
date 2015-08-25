@@ -1,7 +1,6 @@
 package com.exposit.sjc.app.repository.entity;
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+
 /**
  * Created by Админ on 21.08.2015.
  */    @Entity
@@ -12,7 +11,7 @@ public class UserEntity {
         @Id
         @Column(name = "idUser")
         @GeneratedValue(strategy = GenerationType.AUTO)
-        private Long userId;
+        private Long idUser;
         @Column(name = "address")
         private String address;
         @Column(name = "phoneNumber")
@@ -44,7 +43,7 @@ public class UserEntity {
 
         public UserEntity(Long userId, String address, int phoneNumber, String email, String lastName, String firstName,
                     String patronymic, int amountOfMoney, int authorizationData) {
-            this.userId = userId;
+            this.idUser = userId;
             this.address = address;
             this.phoneNumber = phoneNumber;
             this.email = email;
@@ -55,12 +54,12 @@ public class UserEntity {
             this.idAutorizationData = authorizationData;
         }
 
-        public Long getUserId() {
-            return userId;
+        public Long getIdUser() {
+            return idUser;
         }
 
-        public void setUserId(Long userId) {
-            this.userId = userId;
+        public void setIdUser(Long userId) {
+            this.idUser = userId;
         }
 
         public String getAddress() {

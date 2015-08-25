@@ -16,4 +16,7 @@ public interface UserService {
     UserEntity getUserByID(Long userId);
 
     public void removeUser(Integer id);
+
+
+    void updateUser(User user);
 }

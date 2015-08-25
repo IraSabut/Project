@@ -6,7 +6,7 @@
 </head>
 <body>
 <div>
-    <h1>List users</h1>
+  <h1>List users</h1>
   <c:if test = "${!empty users}">
     <table>
       <tr>
@@ -33,28 +33,12 @@
     </table>
   </c:if>
 
-
-
-  
-
-
-
-
-  <div class="form-group">
-    <label for="login" class="col-sm-4 control-label">Login:</label>
-    <div class="col-sm-8">
-      <input type="text" id="login" name="login" class="form-control" placeholder="Enter login">
-    </div>
-    <label for="password" class="col-sm-4 control-label">Password:</label>
-    <div class="col-sm-8">
-      <input type="text" id="password" name="password" class="form-control" placeholder="Enter password">
-    </div>
-  </div>
-  <div class="form-group">
-    <div class="col-sm-offset-4 col-sm-8">
-      <input name="submit" type="submit" class="btn btn-primary" value=" Sign In " />
-    </div>
-  </div>
+  <a href="<c:url value="/hello" /> ">
+    <label>Login:</label>
+</a>
+  <a href="<c:url value="/showUser" /> ">
+    <label>showUser :</label>
+  </a>
   <div class="form-group">
     <label> </label>
   </div>
