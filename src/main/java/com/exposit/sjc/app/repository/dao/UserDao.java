@@ -9,5 +9,5 @@ import com.exposit.sjc.domain.model.User;
  */
 public interface UserDao extends GenericDao<UserEntity, Long> {
 
-    void updateUser(User user);
+    void updateUser(UserEntity user);
 }

@@ -22,7 +22,7 @@ public class UserRepository  extends AbstractHibernateDao<UserEntity, Long> impl
     }
 
     @Override
-    public void updateUser(User user) {
+    public void updateUser(UserEntity user) {
 
     }
 }

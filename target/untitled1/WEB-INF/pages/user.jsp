@@ -39,6 +39,12 @@
   <a href="<c:url value="/showUser" /> ">
     <label>showUser :</label>
   </a>
+  <a href="<c:url value="/editUser" /> ">
+    <label>editUser :</label>
+  </a>
+  <a href="<c:url value="/contract" /> ">
+    <label>Contract :</label>
+  </a>
   <div class="form-group">
     <label> </label>
   </div>

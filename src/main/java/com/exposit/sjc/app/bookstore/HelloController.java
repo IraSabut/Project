@@ -1,10 +1,12 @@
 package com.exposit.sjc.app.bookstore;
 
 import com.exposit.sjc.app.repository.entity.BookEntity;
+import com.exposit.sjc.app.repository.entity.ContractEntity;
 import com.exposit.sjc.app.repository.entity.UserEntity;
 import com.exposit.sjc.app.repository.hibernate.AbstractHibernateDao;
 import com.exposit.sjc.domain.model.User;
 import com.exposit.sjc.domain.service.BookService;
+import com.exposit.sjc.domain.service.ContractService;
 import com.exposit.sjc.domain.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -25,11 +27,12 @@ public class HelloController {
    // private AbstractHibernateDao abstractHibernateDao;
     private BookService bookService;
     private UserService userService;
+    private ContractService contractService;
 @Autowired
-    public HelloController(UserService userService,BookService bookService) {
-
-    this.userService=userService;
+    public HelloController(UserService userService,BookService bookService,ContractService contractService) {
+  this.userService=userService;
     this.bookService=bookService;
+this.contractService=contractService;
     }
 
 
@@ -52,6 +55,16 @@ public class HelloController {
         model.addAttribute("users", users);
 
         return "user";
+    }
+
+
+    @RequestMapping(value = "contract",method = RequestMethod.GET)
+    public String getContracts(Model model) {
+        List<ContractEntity> contracts = this.contractService.getContracts();
+
+        model.addAttribute("contracts", contracts);
+
+        return "contract";
     }
 
 

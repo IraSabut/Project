@@ -18,6 +18,7 @@ public class BookEntity  {
     @Column(name = "idBook")
 
     private Integer idBook;
+
     @Size(max = 500)
     @Column(name = "annotation")
     private String annotation;
