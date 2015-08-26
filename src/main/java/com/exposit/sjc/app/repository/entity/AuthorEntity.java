@@ -1,9 +1,8 @@
 package com.exposit.sjc.app.repository.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import com.exposit.sjc.domain.model.User;
+
+import javax.persistence.*;
 
 @Entity
 @Table(name = "author")
@@ -11,17 +10,17 @@ public class AuthorEntity {
     @Id
     @Column(name = "idAuthor")
     private Long idAuthor;
+    @JoinColumn(name = "idUser", referencedColumnName = "idUser")
+    @ManyToOne
+    private UserEntity idUser;
 
-    public int getIdUser() {
+    public UserEntity getIdUser() {
         return idUser;
     }
 
-    public void setIdUser(int idUser) {
+    public void setIdUser(UserEntity idUser) {
         this.idUser = idUser;
     }
-
-    @Column(name = "idUser")
-    private int idUser;
 
     public Long getIdAuthor() {
         return idAuthor;

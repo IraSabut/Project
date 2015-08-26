@@ -11,19 +11,22 @@
 <c:if test = "${!empty authors}">
   <table>
     <tr>
-      <th>idAuthor</th>
-      <th>idUser</th>
+
+      <th>Авторы:</th>
 
 
     </tr>
     <c:forEach items = "${authors}" var = "author">
       <tr>
-        <td>${author.idAuthor}</td>
-        <td>${author.idUser}<td>
+
+        <td>${author.idUser.lastName}   ${author.idUser.firstName} <td>
 
       </tr>
     </c:forEach>
   </table>
 </c:if>
+<a href="<c:url value="/contract" /> ">
+  <label>Мои контракты:</label>
+</a>
 </body>
 </html>
