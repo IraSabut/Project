@@ -13,6 +13,7 @@ import com.exposit.sjc.domain.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -93,9 +94,14 @@ this.contractService=contractService;
 
     }
 
+    @RequestMapping(value = "/getContract{id}",method = RequestMethod.GET)
+    public String getContract(@PathVariable Long id, Model model) {
+        ContractEntity contract = this.contractService.getContractByID(id);
+        model.addAttribute("contractById", contract);
+        return "contractById";
+    }
 
-
-    @RequestMapping(value ="/contractById", method = RequestMethod.GET)
+  /*@RequestMapping(value ="/contractById", method = RequestMethod.GET)
     public String getContract(Model model) {
         ContractEntity contract =  this.contractService.getContractByID(1L);
 
@@ -104,7 +110,7 @@ this.contractService=contractService;
         return "contractById";
 
     }
-
+*/
     @RequestMapping(value ="/editUser", method = RequestMethod.GET)
     public ModelAndView editUser( HttpServletRequest request, HttpServletResponse response) {
 
