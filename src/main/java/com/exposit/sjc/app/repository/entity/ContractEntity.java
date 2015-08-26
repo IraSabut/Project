@@ -10,7 +10,7 @@ public class ContractEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idContract")
-    private Integer idContract;
+    private Long idContract;
 
 
     @Column(name = "idBook")
@@ -31,11 +31,11 @@ public class ContractEntity {
     @Column(name = "fullPaymentToTheAuthor")
     private Integer fullPaymentToTheAuthor;
 
-    public Integer getIdContract() {
+    public Long getIdContract() {
         return idContract;
     }
 
-    public void setIdContract(Integer idContract) {
+    public void setIdContract(Long idContract) {
         this.idContract = idContract;
     }
 

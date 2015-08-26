@@ -93,6 +93,18 @@ this.contractService=contractService;
 
     }
 
+
+
+    @RequestMapping(value ="/contractById", method = RequestMethod.GET)
+    public String getContract(Model model) {
+        ContractEntity contract =  this.contractService.getContractByID(1L);
+
+        model.addAttribute("contractById", contract);
+
+        return "contractById";
+
+    }
+
     @RequestMapping(value ="/editUser", method = RequestMethod.GET)
     public ModelAndView editUser( HttpServletRequest request, HttpServletResponse response) {
 
