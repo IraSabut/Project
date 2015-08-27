@@ -1,15 +1,9 @@
 package com.exposit.sjc.app.bookstore;
 
-import com.exposit.sjc.app.repository.entity.AuthorEntity;
-import com.exposit.sjc.app.repository.entity.BookEntity;
-import com.exposit.sjc.app.repository.entity.ContractEntity;
-import com.exposit.sjc.app.repository.entity.UserEntity;
+import com.exposit.sjc.app.repository.entity.*;
 import com.exposit.sjc.app.repository.hibernate.AbstractHibernateDao;
 import com.exposit.sjc.domain.model.User;
-import com.exposit.sjc.domain.service.AuthorService;
-import com.exposit.sjc.domain.service.BookService;
-import com.exposit.sjc.domain.service.ContractService;
-import com.exposit.sjc.domain.service.UserService;
+import com.exposit.sjc.domain.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -32,12 +26,14 @@ public class HelloController {
     private UserService userService;
     private ContractService contractService;
     private AuthorService authorService;
+    private AuthorizationDataService authorizationDataService;
 @Autowired
-    public HelloController(UserService userService,BookService bookService,ContractService contractService,AuthorService authorService) {
+    public HelloController(UserService userService,BookService bookService,ContractService contractService,AuthorService authorService,AuthorizationDataService authorizationDataService) {
   this.userService=userService;
     this.bookService=bookService;
 this.contractService=contractService;
     this.authorService=authorService;
+    this.authorizationDataService=authorizationDataService;
     }
 
 

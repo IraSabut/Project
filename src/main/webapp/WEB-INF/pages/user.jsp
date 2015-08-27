@@ -28,6 +28,9 @@
           <td>${user.email}<td>
           <td>${user.address}</td>
           <td>${user.phoneNumber}<td>
+          <td>${user.idAutorizationData.login}  ${user.idAutorizationData.password}  ${user.idAutorizationData.role}<td>
+
+
         </tr>
       </c:forEach>
     </table>

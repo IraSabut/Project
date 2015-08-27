@@ -27,34 +27,18 @@ public class UserEntity {
         @Column(name = "amountOfMoney")
         private int amountOfMoney;
         @JoinColumn(name = "idAutorizationData", referencedColumnName = "idAutorizationData")
-        private int idAutorizationData;
+        @ManyToOne
+        private AutorizationDataEntity idAutorizationData;
 
-        public int getIdAutorizationData() {
-            return idAutorizationData;
-        }
+    public AutorizationDataEntity getIdAutorizationData() {
+        return idAutorizationData;
+    }
 
-        public void setIdAutorizationData(int idAutorizationData) {
-            this.idAutorizationData = idAutorizationData;
-        }
+    public void setIdAutorizationData(AutorizationDataEntity idAutorizationData) {
+        this.idAutorizationData = idAutorizationData;
+    }
 
-        public UserEntity() {
-
-        }
-
-        public UserEntity(Long userId, String address, int phoneNumber, String email, String lastName, String firstName,
-                    String patronymic, int amountOfMoney, int authorizationData) {
-            this.idUser = userId;
-            this.address = address;
-            this.phoneNumber = phoneNumber;
-            this.email = email;
-            this.lastName = lastName;
-            this.firstName = firstName;
-            this.patronymic = patronymic;
-            this.amountOfMoney = amountOfMoney;
-            this.idAutorizationData = authorizationData;
-        }
-
-        public Long getIdUser() {
+    public Long getIdUser() {
             return idUser;
         }
 
