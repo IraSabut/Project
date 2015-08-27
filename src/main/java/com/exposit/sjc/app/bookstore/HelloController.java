@@ -1,15 +1,20 @@
 package com.exposit.sjc.app.bookstore;
 
 import com.exposit.sjc.app.repository.entity.*;
+import com.exposit.sjc.app.repository.entity.validation.UserValidator;
 import com.exposit.sjc.app.repository.hibernate.AbstractHibernateDao;
 import com.exposit.sjc.domain.model.User;
 import com.exposit.sjc.domain.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
@@ -27,6 +32,9 @@ public class HelloController {
     private ContractService contractService;
     private AuthorService authorService;
     private AuthorizationDataService authorizationDataService;
+private UserValidator userValidator;
+
+
 @Autowired
     public HelloController(UserService userService,BookService bookService,ContractService contractService,AuthorService authorService,AuthorizationDataService authorizationDataService) {
   this.userService=userService;
@@ -34,6 +42,7 @@ public class HelloController {
 this.contractService=contractService;
     this.authorService=authorService;
     this.authorizationDataService=authorizationDataService;
+
     }
 
 
@@ -113,6 +122,35 @@ this.contractService=contractService;
       model.addAttribute("user",new UserEntity());
       return "registrationUser";
   }
+
+
+
+
+
+
+
+    @RequestMapping(method = RequestMethod.POST)
+    public ModelAndView addUser(@ModelAttribute("command") User user,
+                                BindingResult result,
+                                SessionStatus status) {
+
+        userValidator.validate(user, result);
+
+        if(result.hasErrors()){
+            return new ModelAndView("index", "command", user);
+        }else {
+            status.setComplete();
+        }
+
+        return new ModelAndView("index", "command", user);
+    }
+
+    @RequestMapping(method = RequestMethod.GET)
+    public String welcome(ModelMap model) {
+        model.addAttribute("command", new User());
+        return "index";
+    }
+
 
 
     @RequestMapping(value ="/editUser", method = RequestMethod.GET)

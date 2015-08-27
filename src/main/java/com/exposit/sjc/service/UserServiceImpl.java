@@ -43,6 +43,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public void save(UserEntity userEntity) {
+userRepository.save(userEntity);
+    }
+
+    @Override
     public void updateUser(UserEntity user) {
 
          userRepository.updateUser(user);

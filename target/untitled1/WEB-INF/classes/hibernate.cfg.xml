@@ -9,6 +9,8 @@
         <mapping class = "com.exposit.sjc.app.repository.entity.ContractEntity"/>
         <mapping class = "com.exposit.sjc.app.repository.entity.AuthorEntity"/>
         <mapping class = "com.exposit.sjc.app.repository.entity.AutorizationDataEntity"/>
+        <mapping class = "com.exposit.sjc.app.repository.entity.validation.UserValidator"/>
+
 
     </session-factory>
 </hibernate-configuration>

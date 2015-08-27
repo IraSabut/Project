@@ -7,6 +7,7 @@
 
     <context:component-scan base-package="com.exposit.sjc.app.bookstore"/>
     <context:component-scan base-package="com.exposit.sjc.service"/>
+    <context:component-scan base-package="com.exposit.sjc.app.repository.entity.validation"/>
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/pages/"/>
