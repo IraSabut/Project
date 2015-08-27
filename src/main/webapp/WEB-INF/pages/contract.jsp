@@ -24,6 +24,8 @@
       <th> numberOfBooks</th>
       <th>productionCost</th>
       <th>valuePayments</th>
+      <th>idAuthorEntity</th>
+
 
     </tr>
     <c:forEach items = "${contracts}" var = "contract">
@@ -36,6 +38,7 @@
         <td>${contract.numberOfBooks}</td>
         <td>${contract.productionCost}<td>
         <td>${contract.valuePayments}<td>
+        <td>${contract.idAuthorEntity.idUser.firstName}   ${contract.idAuthorEntity.idUser.lastName}  <td>
       </tr>
     </c:forEach>
   </table>

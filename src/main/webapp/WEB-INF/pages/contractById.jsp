@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -17,6 +18,7 @@
     <th> numberOfBooks</th>
     <th>productionCost</th>
     <th>valuePayments</th>
+    <th>idAuthorEntity</th>
 
   </tr>
 
@@ -29,6 +31,7 @@
     <td>${contractById.numberOfBooks}<td>
     <td>${contractById.productionCost}</td>
     <td>${contractById.valuePayments}<td>
+    <td>${contractById.idAuthorEntity.idUser.firstName} ${contractById.idAuthorEntity.idUser.lastName}    <td>
 
   </tr>
 

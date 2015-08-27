@@ -31,6 +31,20 @@ public class ContractEntity {
     @Column(name = "fullPaymentToTheAuthor")
     private Integer fullPaymentToTheAuthor;
 
+    public AuthorEntity getIdAuthorEntity() {
+        return idAuthorEntity;
+    }
+
+    public void setIdAuthorEntity(AuthorEntity idAuthorEntity) {
+        this.idAuthorEntity = idAuthorEntity;
+    }
+
+    @JoinColumn(name = "idAuthor", referencedColumnName = "idAuthor")
+    @ManyToOne
+
+    private AuthorEntity idAuthorEntity;
+
+
     public Long getIdContract() {
         return idContract;
     }

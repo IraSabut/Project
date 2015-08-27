@@ -111,6 +111,14 @@ this.contractService=contractService;
 
     }
 */
+  @RequestMapping(value = "/addUser",method = RequestMethod.GET)
+  public String addNewUser(Model model) {
+
+      model.addAttribute("user",new UserEntity());
+      return "registrationUser";
+  }
+
+
     @RequestMapping(value ="/editUser", method = RequestMethod.GET)
     public ModelAndView editUser( HttpServletRequest request, HttpServletResponse response) {
 

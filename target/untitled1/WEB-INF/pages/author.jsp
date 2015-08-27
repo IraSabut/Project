@@ -19,7 +19,7 @@
     <c:forEach items = "${authors}" var = "author">
       <tr>
 
-        <td>${author.idUser.lastName}   ${author.idUser.firstName} <td><a href="<c:url value="/getContract${contract.idAuthor}" /> ">
+        <td>${author.idUser.lastName}   ${author.idUser.firstName} <td><a href="<c:url value="/getContract${author.idUser.idUser}" /> ">
         <label>Мои контракты:</label>
 </a>
       </tr>
@@ -27,7 +27,7 @@
   </table>
 </c:if>
 <a href="<c:url value="/contract" /> ">
-  <label>Мои контракты:</label>
+  <label>все контракты:</label>
 </a>
 </body>
 </html>

@@ -32,7 +32,9 @@
       </c:forEach>
     </table>
   </c:if>
-
+  <a href="<c:url value="/addUser" /> ">
+    <label>Регистрация:</label>
+  </a>
   <a href="<c:url value="/hello" /> ">
     <label>Login:</label>
 </a>
