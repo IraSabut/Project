@@ -10,15 +10,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -32,7 +30,7 @@ public class HelloController {
     private ContractService contractService;
     private AuthorService authorService;
     private AuthorizationDataService authorizationDataService;
-private UserValidator userValidator;
+
 
 
 @Autowired
@@ -119,7 +117,7 @@ this.contractService=contractService;
   @RequestMapping(value = "/addUser",method = RequestMethod.GET)
   public String addNewUser(Model model) {
 
-      model.addAttribute("user",new UserEntity());
+      model.addAttribute("user", new UserEntity());
       return "registrationUser";
   }
 
@@ -128,28 +126,6 @@ this.contractService=contractService;
 
 
 
-
-    @RequestMapping(method = RequestMethod.POST)
-    public ModelAndView addUser(@ModelAttribute("command") User user,
-                                BindingResult result,
-                                SessionStatus status) {
-
-        userValidator.validate(user, result);
-
-        if(result.hasErrors()){
-            return new ModelAndView("index", "command", user);
-        }else {
-            status.setComplete();
-        }
-
-        return new ModelAndView("index", "command", user);
-    }
-
-    @RequestMapping(method = RequestMethod.GET)
-    public String welcome(ModelMap model) {
-        model.addAttribute("command", new User());
-        return "index";
-    }
 
 
 

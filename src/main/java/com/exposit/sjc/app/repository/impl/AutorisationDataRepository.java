@@ -16,4 +16,6 @@ public class AutorisationDataRepository extends AbstractHibernateDao<Autorizatio
                 .add(Restrictions.eq("idAutorizationData", autorizationDataId));
         return (AutorizationDataEntity) cr.uniqueResult();
     }
+
+
 }

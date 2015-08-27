@@ -7,6 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.Table;
+import javax.rmi.CORBA.StubDelegate;
 
 public class User {
 
@@ -118,5 +119,7 @@ public class User {
 	public void setAmountOfMoney(int amountOfMoney) {
 		this.amountOfMoney = amountOfMoney;
 	}
+
+
 
 }

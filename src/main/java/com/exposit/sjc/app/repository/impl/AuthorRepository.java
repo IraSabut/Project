@@ -17,4 +17,6 @@ public class AuthorRepository extends AbstractHibernateDao<AuthorEntity, Long> i
         return (AuthorEntity) cr.uniqueResult();
     }
 
+
+
 }

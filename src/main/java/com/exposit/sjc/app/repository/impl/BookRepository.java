@@ -21,4 +21,6 @@ public class BookRepository extends AbstractHibernateDao<BookEntity, Long> imple
     }
 
 
+
+
 }

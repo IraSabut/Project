@@ -29,13 +29,7 @@ public class UserServiceImpl implements UserService {
         return userEntities;
     }
 
-    @Override
-    public UserEntity getUserByID(Long userId) {
-        UserEntity userEntity = userRepository.findById(userId);
 
-
-        return userEntity;
-    }
 
     @Override
     public void removeUser(Integer id) {
@@ -52,4 +46,13 @@ userRepository.save(userEntity);
 
          userRepository.updateUser(user);
     }
+    @Override
+    public UserEntity getUserByID(Long userId) {
+        UserEntity userEntity = userRepository.findById(userId);
+
+
+        return userEntity;
+    }
+
+
 }

@@ -38,7 +38,7 @@
   <a href="<c:url value="/addUser" /> ">
     <label>Регистрация:</label>
   </a>
-  <a href="<c:url value="/hello" /> ">
+  <a href="<c:url value="/signup" /> ">
     <label>Login:</label>
 </a>
   <a href="<c:url value="/showUser" /> ">

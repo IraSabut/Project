@@ -18,4 +18,6 @@ public class ContractRepository extends AbstractHibernateDao<ContractEntity, Lon
                 .add(Restrictions.eq("idContract", contractId));
         return (ContractEntity) cr.uniqueResult();
     }
+
+
 }
