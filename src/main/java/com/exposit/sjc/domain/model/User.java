@@ -39,22 +39,7 @@ public class User {
 
 
 
-	public User() {
 
-	}
-
-	public User(Long userId, String address, int phoneNumber, String email, String lastName, String firstName,
-			String patronymic, int amountOfMoney, AuthorizationData authorizationData) {
-		this.userId = userId;
-		this.address = address;
-		this.phoneNumber = phoneNumber;
-		this.email = email;
-		this.lastName = lastName;
-		this.firstName = firstName;
-		this.patronymic = patronymic;
-		this.amountOfMoney = amountOfMoney;
-		this.idAutorizationData = authorizationData;
-	}
 
 	public Long getUserId() {
 		return userId;

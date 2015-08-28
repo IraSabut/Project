@@ -6,17 +6,14 @@ import com.exposit.sjc.domain.model.User;
 
 import java.util.List;
 
-/**
- * Created by Админ on 21.08.2015.
- */
 public interface UserService {
-    public void addUser(User contact);
+
 
     List<UserEntity> getUsers();
     UserEntity getUserByID(Long userId);
 
-    public void removeUser(Integer id);
-
+    UserEntity loadUserByCredentials(String login, String password);
+UserEntity loadUserByName(String userName);
 void save(UserEntity userEntity);
     void updateUser(UserEntity user);
 

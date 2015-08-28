@@ -17,7 +17,7 @@
 <th>idAutorizationData.login</th>
 
 
-<td>${user.idAutorizationData.login} <th>user.idAutorizationData.password</th> ${user.idAutorizationData.password} <th>user.idAutorizationData.role</th> ${user.idAutorizationData.role}<td>
+<td>${user.idAutorizationData.login} <th>user.idAutorizationData.password</th> ${user.idAutorizationData.password} <th>user.idAutorizationData.role</th> <td>
 
 <p>Congratulations! Your signup was successful</p>
 

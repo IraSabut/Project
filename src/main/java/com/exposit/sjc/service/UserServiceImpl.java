@@ -17,24 +17,17 @@ import java.util.List;
 public class UserServiceImpl implements UserService {
     @Autowired
 	private UserDao userRepository;
-    @Override
-    public void addUser(User contact) {
 
-    }
 
     @Override
     public List<UserEntity> getUsers() {
         List<UserEntity> userEntities = userRepository.findAll();
-
         return userEntities;
     }
 
 
 
-    @Override
-    public void removeUser(Integer id) {
 
-    }
 
     @Override
     public void save(UserEntity userEntity) {
@@ -43,14 +36,23 @@ userRepository.save(userEntity);
 
     @Override
     public void updateUser(UserEntity user) {
-
          userRepository.updateUser(user);
     }
     @Override
     public UserEntity getUserByID(Long userId) {
         UserEntity userEntity = userRepository.findById(userId);
+        return userEntity;
+    }
 
+    @Override
+    public UserEntity loadUserByCredentials(String login, String password) {
+        UserEntity userEntity = userRepository.findByCredentials(login,password);
+        return userEntity;
+    }
 
+    @Override
+    public UserEntity loadUserByName(String userName) {
+        UserEntity userEntity = userRepository.findByName(userName);
         return userEntity;
     }
 

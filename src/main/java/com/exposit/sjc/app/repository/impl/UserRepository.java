@@ -23,4 +23,22 @@ public class UserRepository  extends AbstractHibernateDao<UserEntity, Long> impl
     public void updateUser(UserEntity user) {
 
     }
+
+    @Override
+    public UserEntity findByCredentials(String login, String password) {
+        Criteria cr = getSession()
+                .createCriteria(UserEntity.class, "users")
+                .add(Restrictions.eq("login", login))
+                .add(Restrictions.eq("password", password));
+        return (UserEntity) cr.uniqueResult();
+    }
+
+
+    @Override
+    public UserEntity findByName(String userName) {
+        Criteria cr = getSession()
+                .createCriteria(UserEntity.class, "users")
+                .add(Restrictions.like("login", userName));
+        return (UserEntity) cr.uniqueResult();
+    }
 }
