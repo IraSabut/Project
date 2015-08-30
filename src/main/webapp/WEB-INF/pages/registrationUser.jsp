@@ -7,7 +7,7 @@
     <title></title>
 </head>
 <body>
-<form:form method="post" action="/user/addUserPost" commandName="user" >
+<form:form method="get" action="/addUser" commandName="user" >
     <table>
         <tr>
             <td>
@@ -21,7 +21,17 @@
 
         </tr>
 
+        <tr>
+            <td>
+                <form:label path="idAutorizationData.password">
+                    Пароль
+                </form:label>
+            </td>
+            <td>
+                <form:input path="idAutorizationData.password"/>
+            </td>
 
+        </tr>
 
         <tr>
             <td>
@@ -66,14 +76,48 @@
     </tr>
         <tr>
             <td>
+                <form:label path="phoneNumber">
+                    phoneNumber
+                </form:label>
+            </td>
+            <td>
+                <form:input path="phoneNumber"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <form:label path="idUser">
+                    idUser
+                </form:label>
+            </td>
+            <td>
+                <form:input path="idUser"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <form:label path="idAutorizationData.role.">
+                    idAutorizationData.idRole
+                </form:label>
+            </td>
+            <td>
+                <form:input path="idAutorizationData.role"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
                 <form:label path="address">
-                   Адрес
+                    Адрес
                 </form:label>
             </td>
             <td>
                 <form:input path="address"/>
             </td>
         </tr>
+
+
+
+
         <tr>
             <td>
                 <form:label path="email">
