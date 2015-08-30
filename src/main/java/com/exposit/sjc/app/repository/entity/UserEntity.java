@@ -1,9 +1,9 @@
 package com.exposit.sjc.app.repository.entity;
+import com.exposit.sjc.domain.model.AuthorizationData;
+
 import javax.persistence.*;
 
-/**
- * Created by Админ on 21.08.2015.
- */    @Entity
+    @Entity
        @Table(name = "user")
 public class UserEntity {
 
@@ -101,4 +101,8 @@ public class UserEntity {
         public void setAmountOfMoney(int amountOfMoney) {
             this.amountOfMoney = amountOfMoney;
         }
+
+    public void setIdAutorizationData(AuthorizationData authorizationData) {
+
+    }
 }
