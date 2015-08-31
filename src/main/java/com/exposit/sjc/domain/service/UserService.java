@@ -14,7 +14,7 @@ public interface UserService {
 
     UserEntity loadUserByCredentials(String login, String password);
 UserEntity loadUserByName(String userName);
-void save(UserEntity userEntity);
+void save(UserEntity user);
     void updateUser(UserEntity user);
 
 

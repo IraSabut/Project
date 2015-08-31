@@ -44,7 +44,7 @@
   <a href="<c:url value="/showUser" /> ">
     <label>showUser :</label>
   </a>
-  <a href="<c:url value="/editUser" /> ">
+  <a href="<c:url value="/user/editUser" /> ">
     <label>editUser :</label>
   </a>
   <a href="<c:url value="/contract" /> ">
