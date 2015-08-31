@@ -132,7 +132,7 @@
 
 
     <tr>
-      <td colspan="2"><input type="submit" value="Добавить"/></td>
+      <td colspan="2"><input type="submit" value="Сохранить изменения"/></td>
     </tr>
   </table>
 </form:form>

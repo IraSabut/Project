@@ -7,7 +7,8 @@
     <title></title>
 </head>
 <body>
-<form:form method="post" action="/addUser" commandName="" >
+<c:url var="saveUrl" value="/user/addUser" />
+<form:form method="post" action="${saveUrl}" commandName="user" >
     <table>
         <tr>
             <td>

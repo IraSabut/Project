@@ -125,19 +125,4 @@ this.contractService=contractService;
 
 
 
-
-
-
-
-    @RequestMapping(value ="/editUser", method = RequestMethod.GET)
-    public ModelAndView editUser( HttpServletRequest request, HttpServletResponse response) {
-
-        System.out.println("chech ID :  " + request.getParameter("selectUser"));
-
-
-        return  new ModelAndView("user");
-    }
-
-
-
 }
