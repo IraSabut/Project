@@ -10,7 +10,7 @@ public class UserEntity {
 
         @Id
         @Column(name = "idUser")
-        @GeneratedValue(strategy = GenerationType.AUTO)
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
         private Long idUser;
         @Column(name = "address")
         private String address;
@@ -29,8 +29,22 @@ public class UserEntity {
         @JoinColumn(name = "idAutorizationData", referencedColumnName = "idAutorizationData")
         @ManyToOne
         private AutorizationDataEntity idAutorizationData;
+        public UserEntity(String address, int phoneNumber, String email, String lastName, String firstName, String patronymic, int amountOfMoney, AutorizationDataEntity idAutorizationData) {
+            this.address = address;
+            this.phoneNumber = phoneNumber;
+            this.email = email;
+            this.lastName = lastName;
+            this.firstName = firstName;
+            this.patronymic = patronymic;
+            this.amountOfMoney = amountOfMoney;
+            this.idAutorizationData = idAutorizationData;
+        }
 
-    public AutorizationDataEntity getIdAutorizationData() {
+        public UserEntity() {
+
+        }
+
+        public AutorizationDataEntity getIdAutorizationData() {
         return idAutorizationData;
     }
 

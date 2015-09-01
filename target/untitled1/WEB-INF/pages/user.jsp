@@ -35,7 +35,7 @@
       </c:forEach>
     </table>
   </c:if>
-  <a href="<c:url value="/addUser" /> ">
+  <a href="<c:url value="/user/addUser" /> ">
     <label>Регистрация:</label>
   </a>
   <a href="<c:url value="/signup" /> ">
