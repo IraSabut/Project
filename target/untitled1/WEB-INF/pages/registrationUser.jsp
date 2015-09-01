@@ -9,7 +9,7 @@
 </head>
 <body>
 <c:url  value="/user/addUser" />
-<form:form method="post" action="/user/addUser" commandName="user" >
+<form:form method="post" action="${saveUrl}" commandName="user" >
     <table>
         <tr>
             <td>
@@ -86,19 +86,11 @@
                 <form:input path="phoneNumber"/>
             </td>
         </tr>
+
+
         <tr>
             <td>
-                <form:label path="idUser">
-                    idUser
-                </form:label>
-            </td>
-            <td>
-                <form:input path="idUser"/>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <form:label path="idAutorizationData.role.">
+                <form:label path="idAutorizationData.role">
                     idAutorizationData.idRole
                 </form:label>
             </td>

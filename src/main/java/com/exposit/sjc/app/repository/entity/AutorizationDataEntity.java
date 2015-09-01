@@ -29,6 +29,11 @@ public class AutorizationDataEntity {
     @Enumerated(EnumType.STRING)
     private Role role;
 
+    public AutorizationDataEntity(String login, String password) {
+        this.login = login;
+        this.password = password;
+    }
+
     public AutorizationDataEntity() {
     }
 
