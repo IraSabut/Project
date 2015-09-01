@@ -13,7 +13,7 @@ import java.util.List;
 @Service
 @Transactional
 public class AutorisationDataServiceImpl implements AuthorizationDataService{
-    @Autowired(required = false)
+    @Autowired(required = false)//(required = false)
     private AutorizationDataDao autorizationDataRepository;
 
 
@@ -25,5 +25,11 @@ public class AutorisationDataServiceImpl implements AuthorizationDataService{
     @Override
     public AutorizationDataEntity getAutorizationDataByID(Long autorizationDatId) {
         return null;
+    }
+
+    @Override
+    public void save(AutorizationDataEntity autorizationDataEntity) {
+
+        autorizationDataRepository.save(autorizationDataEntity);
     }
 }

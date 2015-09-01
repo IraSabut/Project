@@ -8,34 +8,35 @@
     <title></title>
 </head>
 <body>
-
-<form:form method="post" action="/user/addUser" commandName="user" >
+<form:form method="post" action="/user/addAutorization" commandName="user" >
     <table>
-        <tr>
-            <td>
-                <form:label path="idAutorizationData.login">
-                   Логин
-                </form:label>
-            </td>
-            <td>
-                <form:input path="idAutorizationData.login"/>
-            </td>
+    <tr>
+    <td>
+    <form:label path="idAutorizationData.login">
+      login
+    </form:label>
+    </td>
+    <td>
+    <form:input path="idAutorizationData.login"/>
+    </td>
+    </tr>
 
-        </tr>
 
         <tr>
             <td>
                 <form:label path="idAutorizationData.password">
-                    Пароль
+                    password
                 </form:label>
             </td>
             <td>
                 <form:input path="idAutorizationData.password"/>
             </td>
-
         </tr>
-
-        <tr>
+    </table>
+    </form:form>
+<form:form method="post" action="/user/addUser" commandName="user" >
+    <table>
+             <tr>
             <td>
                 <form:label path="amountOfMoney">
                     Количество денег на счету

@@ -44,19 +44,29 @@ public class UserController {
      return "registrationUser";
     }
 
+    @RequestMapping(value = "/addUserAutorization", method = RequestMethod.GET)
+    public String getAddAutorization(Model model) {
+        logger.debug("Received request to show add page");
+       // List<AutorizationDataEntity> autorizationDataEntities=this.authorizationDataService.getAutorizationDaties();
+        model.addAttribute("autorizationDataEntities", new AutorizationDataEntity());
+        logger.debug("Received request to show add page");
+        return "registrationUser";
+    }
+
+
+
+    @RequestMapping(value ="/addUserAutorization",method = RequestMethod.POST)
+    public String addNewAutorizationUserPost(@ModelAttribute("idAutorizationData") AutorizationDataEntity idAutorizationData, BindingResult results) {
+        this.authorizationDataService.save(idAutorizationData);
+        logger.debug("Received request to add new user");
+        return "registrationUser";
+    }
+
+
     @RequestMapping(value ="/addUser",method = RequestMethod.POST)
     public String addNewUserPost(@ModelAttribute("user") UserEntity user, BindingResult results) {
-
-    /*  if (results.hasErrors()) {
-            logger.debug("Received request to add new user");
-           results.getAllErrors();
-           // return "registrationUser";
-        }*/
-      //  List<AutorizationDataEntity> users = this.authorizationDataService.getAutorizationDaties();
-       // user.setIdAutorizationData(new AutorizationDataEntity("asd","asd"));
-
-        this.userService.save(user);
-        logger.debug("Received request to add new user");
+    this.userService.save(user);
+          logger.debug("Received request to add new user");
         return "registrationUser";
     }
 

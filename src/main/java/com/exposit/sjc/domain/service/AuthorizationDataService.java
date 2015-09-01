@@ -9,4 +9,5 @@ import java.util.List;
 public interface AuthorizationDataService {
     List<AutorizationDataEntity> getAutorizationDaties();
     AutorizationDataEntity getAutorizationDataByID(Long autorizationDatId);
+    void save(AutorizationDataEntity autorizationDataEntity);
 }
