@@ -47,13 +47,14 @@ public class UserController {
     @RequestMapping(value ="/addUser",method = RequestMethod.POST)
     public String addNewUserPost(@ModelAttribute("user") UserEntity user, BindingResult results) {
 
-      if (results.hasErrors()) {
+    /*  if (results.hasErrors()) {
             logger.debug("Received request to add new user");
            results.getAllErrors();
            // return "registrationUser";
-        }
+        }*/
       //  List<AutorizationDataEntity> users = this.authorizationDataService.getAutorizationDaties();
-        user.setIdAutorizationData(new AutorizationDataEntity("asd","asd"));
+       // user.setIdAutorizationData(new AutorizationDataEntity("asd","asd"));
+
         this.userService.save(user);
         logger.debug("Received request to add new user");
         return "registrationUser";
