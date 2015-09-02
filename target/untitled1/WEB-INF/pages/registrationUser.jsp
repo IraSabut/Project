@@ -8,34 +8,30 @@
     <title></title>
 </head>
 <body>
-<form:form method="post" action="/user/addAutorization" commandName="user" >
+
+<form:form method="post" action="/user/addUser" commandName="user" >
     <table>
-    <tr>
-    <td>
-    <form:label path="idAutorizationData.login">
-      login
-    </form:label>
-    </td>
-    <td>
-    <form:input path="idAutorizationData.login"/>
-    </td>
-    </tr>
-
-
         <tr>
             <td>
-                <form:label path="idAutorizationData.password">
-                    password
+                <form:label path="login" >
+                    login
                 </form:label>
             </td>
             <td>
-                <form:input path="idAutorizationData.password"/>
+                <form:input path="login"/>
             </td>
         </tr>
-    </table>
-    </form:form>
-<form:form method="post" action="/user/addUser" commandName="user" >
-    <table>
+
+
+        <td>
+            <form:label path="password">
+                password
+            </form:label>
+        </td>
+        <td>
+            <form:input path="password"/>
+        </td>
+        </tr>
              <tr>
             <td>
                 <form:label path="amountOfMoney">
@@ -88,17 +84,6 @@
             </td>
         </tr>
 
-
-        <tr>
-            <td>
-                <form:label path="idAutorizationData.role">
-                    idAutorizationData.idRole
-                </form:label>
-            </td>
-            <td>
-                <form:input path="idAutorizationData.role"/>
-            </td>
-        </tr>
         <tr>
             <td>
                 <form:label path="address">
@@ -109,9 +94,6 @@
                 <form:input path="address"/>
             </td>
         </tr>
-
-
-
 
         <tr>
             <td>

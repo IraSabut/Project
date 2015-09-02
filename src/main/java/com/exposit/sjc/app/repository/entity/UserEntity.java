@@ -1,5 +1,6 @@
 package com.exposit.sjc.app.repository.entity;
-import com.exposit.sjc.domain.model.AuthorizationData;
+
+import com.exposit.sjc.domain.model.Role;
 
 import javax.persistence.*;
 
@@ -26,6 +27,72 @@ public class UserEntity {
         private String patronymic;
         @Column(name = "amountOfMoney")
         private int amountOfMoney;
+        @Column(name = "password")
+        private String password;
+        @Column(name = "login")
+        private String login;
+        @Column(name = "idRole")
+        @Enumerated(EnumType.STRING)
+        private Role idRole;
+
+        public Role getIdRole() {
+            return idRole;
+        }
+
+        public void setIdRole(Role idRole) {
+            this.idRole = idRole;
+        }
+
+        public UserEntity(String address, int phoneNumber, String email, String lastName, String firstName, String patronymic, int amountOfMoney, String password, String login, Role idRole) {
+            this.address = address;
+            this.phoneNumber = phoneNumber;
+            this.email = email;
+            this.lastName = lastName;
+            this.firstName = firstName;
+            this.patronymic = patronymic;
+            this.amountOfMoney = amountOfMoney;
+            this.password = password;
+            this.login = login;
+            this.idRole = idRole;
+
+        }
+
+        public UserEntity(String address, int phoneNumber, String email, String lastName, String firstName, String patronymic, int amountOfMoney, String password, String login) {
+            this.address = address;
+            this.phoneNumber = phoneNumber;
+            this.email = email;
+            this.lastName = lastName;
+            this.firstName = firstName;
+            this.patronymic = patronymic;
+            this.amountOfMoney = amountOfMoney;
+            this.password = password;
+            this.login = login;
+        }
+
+        public String getPassword() {
+            return password;
+        }
+
+        public void setPassword(String password) {
+            this.password = password;
+        }
+
+        public String getLogin() {
+            return login;
+        }
+
+        public void setLogin(String login) {
+            this.login = login;
+        }
+
+        public AutorizationDataEntity getIdAutorizationData() {
+            return idAutorizationData;
+        }
+
+        public void setIdAutorizationData(AutorizationDataEntity idAutorizationData) {
+            this.idAutorizationData = idAutorizationData;
+        }
+
         @JoinColumn(name = "idAutorizationData", referencedColumnName = "idAutorizationData")
         @ManyToOne
         private AutorizationDataEntity idAutorizationData;
@@ -44,13 +111,7 @@ public class UserEntity {
 
         }
 
-        public AutorizationDataEntity getIdAutorizationData() {
-        return idAutorizationData;
-    }
 
-    public void setIdAutorizationData(AutorizationDataEntity idAutorizationData) {
-        this.idAutorizationData = idAutorizationData;
-    }
 
     public Long getIdUser() {
             return idUser;
@@ -116,7 +177,5 @@ public class UserEntity {
             this.amountOfMoney = amountOfMoney;
         }
 
-    public void setIdAutorizationData(AuthorizationData authorizationData) {
 
-    }
 }

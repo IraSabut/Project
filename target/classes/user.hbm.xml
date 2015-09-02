@@ -12,6 +12,6 @@
 <property name="firstName" column ="firstName"></property>
 <property name="patronymic" column ="patronymic"></property>
 <property name="amountOfMoney" column ="amountOfMoney"></property>
-<many-to-one name="idAutorizationData" column ="idAutorizationData" class="com.exposit.sjc.domain.model.AuthorizationData" lazy="false"></many-to-one>
+<many-to-one name="idAutorizationData" column ="idAutorizationData" class="com.exposit.sjc.domain.model.AutorizationData" lazy="false"></many-to-one>
 </class>
 </hibernate-mapping>

@@ -1,14 +1,5 @@
 package com.exposit.sjc.domain.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.Table;
-import javax.rmi.CORBA.StubDelegate;
-
 public class User {
 
 	private Long userId;
@@ -26,13 +17,14 @@ public class User {
 	private String patronymic;
 
 	private int amountOfMoney;
-	private AuthorizationData idAutorizationData;
+	private Role idRole;
+	private AutorizationData idAutorizationData;
 
-	public AuthorizationData getIdAutorizationData() {
+	public AutorizationData getIdAutorizationData() {
 		return idAutorizationData;
 	}
 
-	public void setIdAutorizationData(AuthorizationData idAutorizationData) {
+	public void setIdAutorizationData(AutorizationData idAutorizationData) {
 		this.idAutorizationData = idAutorizationData;
 	}
 

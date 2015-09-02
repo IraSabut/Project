@@ -31,7 +31,7 @@ public class LoginController {
         UserEntity user = userService.loadUserByName(username);
 
         System.out.println("user: " + user.getClass().getCanonicalName());
-        System.out.println("role: " + user.getIdAutorizationData().getRole().toString());
+      //  System.out.println("role: " + user.getIdAutorizationData().getRole().toString());
 
         session.setAttribute("user", user);
         mav.addObject("user", user);

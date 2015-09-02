@@ -1,60 +1,37 @@
 package com.exposit.sjc.app.repository.entity;
 
-import com.exposit.sjc.domain.model.Role;
-
 import javax.persistence.*;
-import javax.validation.constraints.Size;
-import java.util.Collection;
 
 @Entity
 @Table(name = "autorizationdata")
-@Inheritance(strategy = InheritanceType.JOINED)
 public class AutorizationDataEntity {
-    private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idAutorizationData")
-    private Integer idAutorizationData;
-    @Basic(optional = false)
-    @javax.validation.constraints.NotNull
-    @Size(min = 1, max = 20)
-    @Column(name = "login")
-    private String login;
-    @Basic(optional = false)
-    @javax.validation.constraints.NotNull
-    @Size(min = 1, max = 20)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long idAutorizationData;
+
     @Column(name = "password")
     private String password;
+    @Column(name = "login")
+    private String login;
     @Column(name = "idRole")
-    @Enumerated(EnumType.STRING)
-    private Role role;
-
-    public AutorizationDataEntity(String login, String password) {
-        this.login = login;
-        this.password = password;
-    }
+    private int idRole;
 
     public AutorizationDataEntity() {
     }
 
-    public static long getSerialVersionUID() {
-        return serialVersionUID;
+    public AutorizationDataEntity(String password, String login, int idRole) {
+        this.password = password;
+        this.login = login;
+        this.idRole = idRole;
     }
 
-    public Integer getIdAutorizationData() {
+    public Long getIdAutorizationData() {
         return idAutorizationData;
     }
 
-    public void setIdAutorizationData(Integer idAutorizationData) {
+    public void setIdAutorizationData(Long idAutorizationData) {
         this.idAutorizationData = idAutorizationData;
-    }
-
-    public String getLogin() {
-        return login;
-    }
-
-    public void setLogin(String login) {
-        this.login = login;
     }
 
     public String getPassword() {
@@ -65,13 +42,19 @@ public class AutorizationDataEntity {
         this.password = password;
     }
 
-
-
-    public Role getRole() {
-        return role;
+    public String getLogin() {
+        return login;
     }
 
-    public void setRole(Role role) {
-        this.role = role;
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
+    public int getIdRole() {
+        return idRole;
+    }
+
+    public void setIdRole(int idRole) {
+        this.idRole = idRole;
     }
 }

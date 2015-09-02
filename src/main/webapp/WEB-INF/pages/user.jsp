@@ -17,6 +17,9 @@
         <th> email</th>
         <th> address</th>
         <th>phoneNumber</th>
+        <th>login</th>
+        <th>password</th>
+        <th>role</th>
 
       </tr>
       <c:forEach items = "${users}" var = "user">
@@ -28,7 +31,9 @@
           <td>${user.email}<td>
           <td>${user.address}</td>
           <td>${user.phoneNumber}<td>
-          <td>${user.idAutorizationData.login}  ${user.idAutorizationData.password}  ${user.idAutorizationData.role}<td>
+          <td>${user.login}
+          ${user.password}
+          ${user.idRole.toString()}<td>
 
 
         </tr>
