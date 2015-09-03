@@ -1,6 +1,7 @@
 package com.exposit.sjc.app.bookstore;
 
 import com.exposit.sjc.app.repository.entity.*;
+import com.exposit.sjc.domain.model.UserPrincipal;
 import com.exposit.sjc.domain.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -77,7 +78,7 @@ this.contractService=contractService;
 
     @RequestMapping(value ="/showUser", method = RequestMethod.GET)
     public String getUser(Model model) {
-        UserEntity user =  this.userService.getUserByID(1L);
+        UserPrincipal user =  this.userService.getUserByID(1L);
 
         model.addAttribute("showUser", user);
 

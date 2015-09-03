@@ -7,28 +7,28 @@
   <title>Edit User</title>
 </head>
 <body>
-<form:form method="post" action="/editUser" commandName="editUser" >
+<form:form method="post" action="/user/editUser" commandName="editUser" >
   <table>
     <tr>
       <td>
-        <form:label path="idAutorizationData.login">
+        <form:label path="username">
           Логин
         </form:label>
       </td>
       <td>
-        <form:input path="idAutorizationData.login"/>
+        <form:input path="username"/>
       </td>
 
     </tr>
 
     <tr>
       <td>
-        <form:label path="idAutorizationData.password">
+        <form:label path="password">
           Пароль
         </form:label>
       </td>
       <td>
-        <form:input path="idAutorizationData.password"/>
+        <form:input path="password"/>
       </td>
 
     </tr>

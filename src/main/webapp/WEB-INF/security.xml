@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+             xmlns:beans="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://www.springframework.org/schema/beans
+                    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                    http://www.springframework.org/schema/security 
+                    http://www.springframework.org/schema/security/spring-security-3.1.xsd">
+
+    <http access-denied-page="/error403">
+        <intercept-url pattern="/user" access="ROLE_USER,ROLE_ANONYMOUS,ROLE_ADMIN,ROLE_STORE,ROLE_AUTHOR,ROLE_PUBLISHER" />
+        <intercept-url pattern="/showUser" access="ROLE_USER,ROLE_ADMIN,ROLE_STORE,ROLE_AUTHOR,ROLE_PUBLISHER" />
+        <intercept-url pattern="/editUser" access="ROLE_USER,ROLE_ADMIN,ROLE_STORE,ROLE_AUTHOR,ROLE_PUBLISHER" />
+        <intercept-url pattern="/contract" access="ROLE_PUBLISHER" />
+        <intercept-url pattern="/registrationUser" access="ROLE_USER,ROLE_ANONYMOUS,ROLE_ADMIN,ROLE_STORE,ROLE_AUTHOR,ROLE_PUBLISHER" />
+
+        <intercept-url pattern="/getContract" access="ROLE_ADMIN,ROLE_PUBLISHER" />
+        <form-login login-page="/signup" default-target-url="/user"
+                    authentication-failure-url="/signup?error=true" />
+        <logout logout-url="/user" logout-success-url="/signup" />
+
+        <anonymous username="guest" granted-authority="ROLE_ANONYMOUS" />
+        <remember-me />
+    </http>
+
+
+
+
+    <authentication-manager>
+        <authentication-provider >
+            <jdbc-user-service data-source-ref="dataSource"
+                               users-by-username-query=
+                                       "select username,password,true from users where username=?"
+                               authorities-by-username-query=
+                                       "select u1.username, u2.role from role u1, role u2 where u1.iduser = u2.iduser and u1.username =?"/>
+
+
+        </authentication-provider>
+    </authentication-manager>
+</beans:beans>  

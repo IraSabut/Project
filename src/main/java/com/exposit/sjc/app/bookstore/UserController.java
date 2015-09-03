@@ -2,7 +2,9 @@ package com.exposit.sjc.app.bookstore;
 
 import com.exposit.sjc.app.repository.entity.AutorizationDataEntity;
 import com.exposit.sjc.app.repository.entity.UserEntity;
+import com.exposit.sjc.domain.model.UserPrincipal;
 import com.exposit.sjc.domain.service.*;
+import com.exposit.sjc.service.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.ui.Model;
@@ -31,6 +33,7 @@ public class UserController {
     public UserController(UserService userService, AutorizationDataService autorizationDataService) {
         this.userService=userService;
         this.autorizationDataService = autorizationDataService;
+
     }
 
 
@@ -77,7 +80,7 @@ public class UserController {
     @RequestMapping(value ="/editUser", method = RequestMethod.GET)
     public String getEdit(Model model) {
         logger.debug("Received request to show edit page");
-        UserEntity user =  this.userService.getUserByID(1L);
+        UserPrincipal user =  this.userService.getUserByID(1L);
 
         model.addAttribute("editUser", user);
 

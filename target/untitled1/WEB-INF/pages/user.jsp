@@ -31,7 +31,7 @@
           <td>${user.email}<td>
           <td>${user.address}</td>
           <td>${user.phoneNumber}<td>
-          <td>${user.login}
+          <td>${user.username}
           ${user.password}
           ${user.idRole.toString()}<td>
 

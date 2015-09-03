@@ -13,12 +13,12 @@
     <table>
         <tr>
             <td>
-                <form:label path="login" >
+                <form:label path="username" >
                     login
                 </form:label>
             </td>
             <td>
-                <form:input path="login"/>
+                <form:input path="username"/>
             </td>
         </tr>
 

@@ -5,7 +5,7 @@ import com.exposit.sjc.domain.model.Role;
 import javax.persistence.*;
 
     @Entity
-       @Table(name = "user")
+       @Table(name = "users")
 public class UserEntity {
 
 
@@ -29,8 +29,8 @@ public class UserEntity {
         private int amountOfMoney;
         @Column(name = "password")
         private String password;
-        @Column(name = "login")
-        private String login;
+        @Column(name = "username")
+        private String username;
         @Column(name = "idRole")
         @Enumerated(EnumType.STRING)
         private Role idRole;
@@ -43,7 +43,7 @@ public class UserEntity {
             this.idRole = idRole;
         }
 
-        public UserEntity(String address, int phoneNumber, String email, String lastName, String firstName, String patronymic, int amountOfMoney, String password, String login, Role idRole) {
+        public UserEntity(String address, int phoneNumber, String email, String lastName, String firstName, String patronymic, int amountOfMoney, String password, String username, Role idRole) {
             this.address = address;
             this.phoneNumber = phoneNumber;
             this.email = email;
@@ -52,12 +52,12 @@ public class UserEntity {
             this.patronymic = patronymic;
             this.amountOfMoney = amountOfMoney;
             this.password = password;
-            this.login = login;
+            this.username = username;
             this.idRole = idRole;
 
         }
 
-        public UserEntity(String address, int phoneNumber, String email, String lastName, String firstName, String patronymic, int amountOfMoney, String password, String login) {
+        public UserEntity(String address, int phoneNumber, String email, String lastName, String firstName, String patronymic, int amountOfMoney, String password, String username) {
             this.address = address;
             this.phoneNumber = phoneNumber;
             this.email = email;
@@ -66,7 +66,11 @@ public class UserEntity {
             this.patronymic = patronymic;
             this.amountOfMoney = amountOfMoney;
             this.password = password;
-            this.login = login;
+            this.username = username;
+        }
+        public UserEntity( String username,String password) {
+            this.username = username;
+            this.password = password;
         }
 
         public String getPassword() {
@@ -77,12 +81,12 @@ public class UserEntity {
             this.password = password;
         }
 
-        public String getLogin() {
-            return login;
+        public String getUsername() {
+            return username;
         }
 
-        public void setLogin(String login) {
-            this.login = login;
+        public void setUsername(String login) {
+            this.username = login;
         }
 
         public AutorizationDataEntity getIdAutorizationData() {
