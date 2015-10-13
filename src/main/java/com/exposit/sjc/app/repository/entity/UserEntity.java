@@ -1,5 +1,6 @@
 package com.exposit.sjc.app.repository.entity;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 import com.exposit.sjc.domain.model.Role;
 
@@ -10,6 +11,10 @@ import javax.persistence.*;
 =======
 import javax.persistence.*;
 
+=======
+import javax.persistence.*;
+
+>>>>>>> parent of 873aa4a... add form for registration user
 /**
  * Created by Админ on 21.08.2015.
  */    @Entity
@@ -190,8 +195,11 @@ public class UserEntity {
             this.amountOfMoney = amountOfMoney;
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> parent of 873aa4a... add form for registration user
 =======
 >>>>>>> parent of 873aa4a... add form for registration user
 }

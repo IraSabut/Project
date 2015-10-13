@@ -9,6 +9,7 @@
 </head>
 <body>
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 <form:form method="post" action="/user/addUser" commandName="user" >
     <table>
@@ -32,8 +33,21 @@
             <td>
                 <form:input path="nameBook"/>
 >>>>>>> parent of 873aa4a... add form for registration user
+=======
+<form:form method="post" action="/author/addBookPost" commandName="book" >
+    <table>
+        <tr>
+            <td>
+                <form:label path="">
+                    Название книги
+                </form:label>
+            </td>
+            <td>
+                <form:input path="nameBook"/>
+>>>>>>> parent of 873aa4a... add form for registration user
             </td>
         </tr>
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 
@@ -58,6 +72,8 @@
         </tr>
 =======
 >>>>>>> parent of 873aa4a... add form for registration user
+=======
+>>>>>>> parent of 873aa4a... add form for registration user
         <tr>
             <td>
                 <form:label path="numberOfPages">
@@ -69,6 +85,7 @@
             </td>
         </tr>
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 
         <tr>
@@ -125,6 +142,8 @@
 
 
 
+=======
+>>>>>>> parent of 873aa4a... add form for registration user
 =======
 >>>>>>> parent of 873aa4a... add form for registration user
         <tr>
