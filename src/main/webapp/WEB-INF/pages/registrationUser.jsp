@@ -8,6 +8,7 @@
     <title></title>
 </head>
 <body>
+<<<<<<< HEAD
 
 <form:form method="post" action="/user/addUser" commandName="user" >
     <table>
@@ -19,8 +20,21 @@
             </td>
             <td>
                 <form:input path="username"/>
+=======
+<form:form method="post" action="/author/addBookPost" commandName="book" >
+    <table>
+        <tr>
+            <td>
+                <form:label path="">
+                    Название книги
+                </form:label>
+            </td>
+            <td>
+                <form:input path="nameBook"/>
+>>>>>>> parent of 873aa4a... add form for registration user
             </td>
         </tr>
+<<<<<<< HEAD
 
 
         <td>
@@ -42,17 +56,20 @@
                 <form:input path="amountOfMoney"/>
             </td>
         </tr>
+=======
+>>>>>>> parent of 873aa4a... add form for registration user
         <tr>
             <td>
-                <form:label path="firstName">
-                 Имя
+                <form:label path="numberOfPages">
+                    Количество страниц
                 </form:label>
             </td>
             <td>
-                <form:input path="firstName"/>
+                <form:input path="numberOfPages"/>
             </td>
         </tr>
 
+<<<<<<< HEAD
 
         <tr>
             <td>
@@ -108,6 +125,8 @@
 
 
 
+=======
+>>>>>>> parent of 873aa4a... add form for registration user
         <tr>
             <td colspan="2"><input type="submit" value="Добавить"/></td>
         </tr>
@@ -115,7 +134,9 @@
 </form:form>
 
 
-
+    <tr>
+      <td colspan="2"><input type="submit" value="Регистрация"/></td>
+    </tr>
 
 
 
